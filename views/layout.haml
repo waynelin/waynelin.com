@@ -1,10 +1,57 @@
 !!! Strict
 %html
   %head
-    %title waynelin.com
-    %link(rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen")
-    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
-    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js")
+    %title Wayne Lin - Acquiring a talent for encouraging talent. 
+    
+    / Metatags 
+    %meta(name="author" content="waynelin.com")
+    %meta(name="robots" content="index, follow")
+    %meta(http-eqiv="Content-Type" content="text/html; charset=UTF-8")
+    %meta(name="keywords" content="wayne, wayne lin, lin")
+    %meta(name="description" content="Wayne Lin - Acquiring a talent for encouraging talent.")
+    
+    / Stylesheets
+    %link(rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen, projection")
+    /[if IE]
+    
+    / Javascripts
+    / %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+    / %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js")
+    %script{:type => "text/javascript", :src => "scripts/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "scripts/jquery-ui.min.js"}
+    %script{:type => "text/javascript", :src => "scripts/jquery.countdown.js"}
+    
+    :javascript 
+      $(document).ready(function(){
+        $('#nav ul').slideUp();
+        
+        $('#nav .toggle').click(function(){
+          if($('#nav ul').is(':visible')){
+            $('#nav ul').slideUp();
+          }
+          else {
+            $('#nav ul').slideDown();
+          }
+        });
+      });
   %body
-    #main
+    #nav
+      %ul
+        %li
+          %a(href="/" title="home") home
+        %li
+          %a(href="/who" title="who") who
+        %li
+          %a(href="/what" title="what") what
+        %li
+          %a(href="/when" title="when") when
+        %li
+          %a(href="/where" title="where") where
+        %li
+          %a(href="/why" title="why") why
+        %li
+          %a(href="/how" title="how") how
+      .toggle
+        %a(href="#" title="Want to go somewhere?")Where to?
+    #container
       =yield

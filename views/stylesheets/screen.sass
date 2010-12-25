@@ -1,8 +1,54 @@
 @import base.sass
 
-!text= #000
+$txtColor: #000
+$bgColor: #c1e76e
 
 body
-  :background #fff
-  h1
-    :color= !text
+  :background-color $bgColor
+
+
+h1
+  :color $txtColor
+  :font-size 16px
+
+  
+#nav 
+  :float right
+  :position fixed
+  :right 50px
+  :top 0px
+  a
+    :color #fff
+    :padding 5px 20px 5px 35px
+    :background-color rgb(100,100,100)
+    :background-color rgba(100, 100, 100, 0.9)
+    :display block
+  ul
+    :list-style none
+    li
+      :line-height 1.2
+      :text-align center
+      a
+        :padding 5px 20px
+      a:hover 
+        :background-color rgb(120,120,120)
+        :background-color rgba(120, 120, 120, 0.9) 
+  .toggle a
+    :border-radius 0px 0px 10px 10px
+    :background-color rgb(80,80,80)
+    :background-color rgba(80, 80, 80, 0.9)
+    :background-image url(../images/arrow.png)
+    :background-repeat no-repeat
+    :background-position 5% 50%
+
+  
+#container .index
+  :background-color $bgColor
+  :width 940px
+  :margin 50px auto
+  :text-align center
+  .img-title
+    :width 70%
+  .countdown
+    :color #779823
+    :font-size 14px
